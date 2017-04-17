@@ -1,0 +1,918 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://stub.by">stubby (v4.0.0)</a>
+</h1>
+<h4>a lightweight server for stubbing external systems and endpoints</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby">module stubby</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.delete">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.delete
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.get">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.get
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.post">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.post
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.put">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.put
+            <span class="apidocSignatureSpan">(id, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.start">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.start
+            <span class="apidocSignatureSpan">(o, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.stop">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.stop
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby">module stubby.Stubby</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.Stubby">
+            function <span class="apidocSignatureSpan">stubby.</span>Stubby
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype">module stubby.Stubby.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.delete">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>delete
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.get">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>get
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.post">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>post
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.put">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>put
+            <span class="apidocSignatureSpan">(id, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.start">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>start
+            <span class="apidocSignatureSpan">(o, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.stop">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>stop
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.delete">module stubby.Stubby.prototype.delete</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.delete.delete">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>delete
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.get">module stubby.Stubby.prototype.get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.get.get">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>get
+            <span class="apidocSignatureSpan">(id, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.post">module stubby.Stubby.prototype.post</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.post.post">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>post
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.put">module stubby.Stubby.prototype.put</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.put.put">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>put
+            <span class="apidocSignatureSpan">(id, data, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.start">module stubby.Stubby.prototype.start</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.start.start">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>start
+            <span class="apidocSignatureSpan">(o, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.stubby.Stubby.prototype.stop">module stubby.Stubby.prototype.stop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.stubby.Stubby.prototype.stop.stop">
+            function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>stop
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby" id="apidoc.module.stubby">module stubby</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby" id="apidoc.element.stubby.Stubby">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stubby() {
+  this.endpoints = new Endpoints();
+  this.stubsPortal = null;
+  this.tlsPortal = null;
+  this.adminPortal = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.delete" id="apidoc.element.stubby.Stubby.prototype.delete">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.delete
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.delete = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') {
+      delete self.endpoints.db;
+      self.endpoints.db = {};
+      callback();
+    } else {
+      self.endpoints.delete(id, callback);
+    }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.get" id="apidoc.element.stubby.Stubby.prototype.get">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.get
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.get = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') { self.endpoints.gather(callback); } else { self.endpoints.retrieve(id, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.post" id="apidoc.element.stubby.Stubby.prototype.post">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.post
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.post = function (data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.create(data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.put" id="apidoc.element.stubby.Stubby.prototype.put">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.put
+        <span class="apidocSignatureSpan">(id, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.put = function (id, data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.update(id, data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.start" id="apidoc.element.stubby.Stubby.prototype.start">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.start
+        <span class="apidocSignatureSpan">(o, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.start = function (o, cb) {
+  var oc = setupStartOptions(o, cb);
+  var options = oc[0];
+  var callback = oc[1];
+  var self = this;
+
+  this.stop(function () {
+    var errors = contract(options.data);
+
+    if (errors) { return callback(errors); }
+    if (options.datadir != null) { self.endpoints.datadir = options.datadir; }
+
+    self.endpoints.create(options.data, onEndpointLoaded);
+
+    self.tlsPortal = https.createServer(createHttpsOptions(options), new Stubs(self.endpoints).server);
+    self.tlsPortal.on('listening', function () { onListening('Stubs', options.tls, 'https', options.location); });
+    self.tlsPortal.on('error', function (err) { onError(err, options.tls, options.location); });
+    self.tlsPortal.listen(options.tls, options.location);
+
+    self.stubsPortal = http.createServer(new Stubs(self.endpoints).server);
+    self.stubsPortal.on('listening', function () { onListening('Stubs', options.stubs, 'http', options.location); });
+    self.stubsPortal.on('error', function (err) { onError(err, options.stubs, options.location); });
+    self.stubsPortal.listen(options.stubs, options.location);
+
+    self.adminPortal = http.createServer(new Admin(self.endpoints).server);
+    self.adminPortal.on('listening', function () { onListening('Admin', options.admin, 'http', options.location); });
+    self.adminPortal.on('error', function (err) { onError(err, options.admin, options.location); });
+    self.adminPortal.listen(options.admin, options.location);
+
+    if (options.watch) { self.watcher = new Watcher(self.endpoints, options.watch); }
+
+    out.info('\nQuit: ctrl-c\n');
+    callback();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.stop" id="apidoc.element.stubby.Stubby.prototype.stop">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby.prototype.stop
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Stubby.prototype.stop = function (callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (self.watcher != null) { self.watcher.deactivate(); }
+
+    async.parallel({
+      closeAdmin: function (cb) {
+        if (self.adminPortal &amp;&amp; self.adminPortal.address()) { self.adminPortal.close(cb); } else { cb(); }
+      },
+      closeStubs: function (cb) {
+        if (self.stubsPortal &amp;&amp; self.stubsPortal.address()) { self.stubsPortal.close(cb); } else { cb(); }
+      },
+      closeTls: function (cb) {
+        if (self.tlsPortal &amp;&amp; self.tlsPortal.address()) { self.tlsPortal.close(cb); } else { return cb(); }
+      }
+    }, callback);
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby" id="apidoc.module.stubby.Stubby">module stubby.Stubby</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.Stubby" id="apidoc.element.stubby.Stubby.Stubby">
+        function <span class="apidocSignatureSpan">stubby.</span>Stubby
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Stubby() {
+  this.endpoints = new Endpoints();
+  this.stubsPortal = null;
+  this.tlsPortal = null;
+  this.adminPortal = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype" id="apidoc.module.stubby.Stubby.prototype">module stubby.Stubby.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.delete" id="apidoc.element.stubby.Stubby.prototype.delete">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>delete
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') {
+      delete self.endpoints.db;
+      self.endpoints.db = {};
+      callback();
+    } else {
+      self.endpoints.delete(id, callback);
+    }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.get" id="apidoc.element.stubby.Stubby.prototype.get">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>get
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') { self.endpoints.gather(callback); } else { self.endpoints.retrieve(id, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.post" id="apidoc.element.stubby.Stubby.prototype.post">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>post
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.create(data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.put" id="apidoc.element.stubby.Stubby.prototype.put">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>put
+        <span class="apidocSignatureSpan">(id, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (id, data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.update(id, data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.start" id="apidoc.element.stubby.Stubby.prototype.start">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>start
+        <span class="apidocSignatureSpan">(o, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (o, cb) {
+  var oc = setupStartOptions(o, cb);
+  var options = oc[0];
+  var callback = oc[1];
+  var self = this;
+
+  this.stop(function () {
+    var errors = contract(options.data);
+
+    if (errors) { return callback(errors); }
+    if (options.datadir != null) { self.endpoints.datadir = options.datadir; }
+
+    self.endpoints.create(options.data, onEndpointLoaded);
+
+    self.tlsPortal = https.createServer(createHttpsOptions(options), new Stubs(self.endpoints).server);
+    self.tlsPortal.on('listening', function () { onListening('Stubs', options.tls, 'https', options.location); });
+    self.tlsPortal.on('error', function (err) { onError(err, options.tls, options.location); });
+    self.tlsPortal.listen(options.tls, options.location);
+
+    self.stubsPortal = http.createServer(new Stubs(self.endpoints).server);
+    self.stubsPortal.on('listening', function () { onListening('Stubs', options.stubs, 'http', options.location); });
+    self.stubsPortal.on('error', function (err) { onError(err, options.stubs, options.location); });
+    self.stubsPortal.listen(options.stubs, options.location);
+
+    self.adminPortal = http.createServer(new Admin(self.endpoints).server);
+    self.adminPortal.on('listening', function () { onListening('Admin', options.admin, 'http', options.location); });
+    self.adminPortal.on('error', function (err) { onError(err, options.admin, options.location); });
+    self.adminPortal.listen(options.admin, options.location);
+
+    if (options.watch) { self.watcher = new Watcher(self.endpoints, options.watch); }
+
+    out.info('\nQuit: ctrl-c\n');
+    callback();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Then within your project files you can do something like:
+
+```javascript
+    var Stubby = require('stubby').Stubby;
+    var mockService = new Stubby();
+
+    mockService.<span class="apidocCodeKeywordSpan">start</span>();
+```
+
+What can I do with it, you ask? Read on!
+
+#### start(options, [callback])
+
+* `options`: an object containing parameters with which to start this stubby. Parameters go along with the full-name flags used
+from the command line.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.stop" id="apidoc.element.stubby.Stubby.prototype.stop">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>stop
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (self.watcher != null) { self.watcher.deactivate(); }
+
+    async.parallel({
+      closeAdmin: function (cb) {
+        if (self.adminPortal &amp;&amp; self.adminPortal.address()) { self.adminPortal.close(cb); } else { cb(); }
+      },
+      closeStubs: function (cb) {
+        if (self.stubsPortal &amp;&amp; self.stubsPortal.address()) { self.stubsPortal.close(cb); } else { cb(); }
+      },
+      closeTls: function (cb) {
+        if (self.tlsPortal &amp;&amp; self.tlsPortal.address()) { self.tlsPortal.close(cb); } else { return cb(); }
+      }
+    }, callback);
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.delete" id="apidoc.module.stubby.Stubby.prototype.delete">module stubby.Stubby.prototype.delete</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.delete.delete" id="apidoc.element.stubby.Stubby.prototype.delete.delete">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>delete
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') {
+      delete self.endpoints.db;
+      self.endpoints.db = {};
+      callback();
+    } else {
+      self.endpoints.delete(id, callback);
+    }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.get" id="apidoc.module.stubby.Stubby.prototype.get">module stubby.Stubby.prototype.get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.get.get" id="apidoc.element.stubby.Stubby.prototype.get.get">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>get
+        <span class="apidocSignatureSpan">(id, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id, callback) {
+  var self = this;
+
+  if (id == null) { id = noop; }
+  if (callback == null) { callback = id; }
+
+  setTimeout(function () {
+    if (typeof id === 'function') { self.endpoints.gather(callback); } else { self.endpoints.retrieve(id, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.post" id="apidoc.module.stubby.Stubby.prototype.post">module stubby.Stubby.prototype.post</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.post.post" id="apidoc.element.stubby.Stubby.prototype.post.post">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>post
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.create(data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.put" id="apidoc.module.stubby.Stubby.prototype.put">module stubby.Stubby.prototype.put</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.put.put" id="apidoc.element.stubby.Stubby.prototype.put.put">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>put
+        <span class="apidocSignatureSpan">(id, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (id, data, callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (contract(data)) { callback(couldNotSave); } else { self.endpoints.update(id, data, callback); }
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.start" id="apidoc.module.stubby.Stubby.prototype.start">module stubby.Stubby.prototype.start</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.start.start" id="apidoc.element.stubby.Stubby.prototype.start.start">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>start
+        <span class="apidocSignatureSpan">(o, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (o, cb) {
+  var oc = setupStartOptions(o, cb);
+  var options = oc[0];
+  var callback = oc[1];
+  var self = this;
+
+  this.stop(function () {
+    var errors = contract(options.data);
+
+    if (errors) { return callback(errors); }
+    if (options.datadir != null) { self.endpoints.datadir = options.datadir; }
+
+    self.endpoints.create(options.data, onEndpointLoaded);
+
+    self.tlsPortal = https.createServer(createHttpsOptions(options), new Stubs(self.endpoints).server);
+    self.tlsPortal.on('listening', function () { onListening('Stubs', options.tls, 'https', options.location); });
+    self.tlsPortal.on('error', function (err) { onError(err, options.tls, options.location); });
+    self.tlsPortal.listen(options.tls, options.location);
+
+    self.stubsPortal = http.createServer(new Stubs(self.endpoints).server);
+    self.stubsPortal.on('listening', function () { onListening('Stubs', options.stubs, 'http', options.location); });
+    self.stubsPortal.on('error', function (err) { onError(err, options.stubs, options.location); });
+    self.stubsPortal.listen(options.stubs, options.location);
+
+    self.adminPortal = http.createServer(new Admin(self.endpoints).server);
+    self.adminPortal.on('listening', function () { onListening('Admin', options.admin, 'http', options.location); });
+    self.adminPortal.on('error', function (err) { onError(err, options.admin, options.location); });
+    self.adminPortal.listen(options.admin, options.location);
+
+    if (options.watch) { self.watcher = new Watcher(self.endpoints, options.watch); }
+
+    out.info('\nQuit: ctrl-c\n');
+    callback();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Then within your project files you can do something like:
+
+```javascript
+    var Stubby = require('stubby').Stubby;
+    var mockService = new Stubby();
+
+    mockService.<span class="apidocCodeKeywordSpan">start</span>();
+```
+
+What can I do with it, you ask? Read on!
+
+#### start(options, [callback])
+
+* `options`: an object containing parameters with which to start this stubby. Parameters go along with the full-name flags used
+from the command line.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.stubby.Stubby.prototype.stop" id="apidoc.module.stubby.Stubby.prototype.stop">module stubby.Stubby.prototype.stop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.stubby.Stubby.prototype.stop.stop" id="apidoc.element.stubby.Stubby.prototype.stop.stop">
+        function <span class="apidocSignatureSpan">stubby.Stubby.prototype.</span>stop
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (callback) {
+  var self = this;
+
+  if (callback == null) { callback = noop; }
+
+  setTimeout(function () {
+    if (self.watcher != null) { self.watcher.deactivate(); }
+
+    async.parallel({
+      closeAdmin: function (cb) {
+        if (self.adminPortal &amp;&amp; self.adminPortal.address()) { self.adminPortal.close(cb); } else { cb(); }
+      },
+      closeStubs: function (cb) {
+        if (self.stubsPortal &amp;&amp; self.stubsPortal.address()) { self.stubsPortal.close(cb); } else { cb(); }
+      },
+      closeTls: function (cb) {
+        if (self.tlsPortal &amp;&amp; self.tlsPortal.address()) { self.tlsPortal.close(cb); } else { return cb(); }
+      }
+    }, callback);
+  }, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
