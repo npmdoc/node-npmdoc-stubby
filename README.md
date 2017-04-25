@@ -1,4 +1,7 @@
-# api documentation for  [stubby (v4.0.0)](http://stub.by)  [![npm package](https://img.shields.io/npm/v/npmdoc-stubby.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-stubby) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-stubby.svg)](https://travis-ci.org/npmdoc/node-npmdoc-stubby)
+# npmdoc-stubby
+
+#### basic api documentation for  [stubby (v4.0.0)](http://stub.by)  [![npm package](https://img.shields.io/npm/v/npmdoc-stubby.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-stubby) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-stubby.svg)](https://travis-ci.org/npmdoc/node-npmdoc-stubby)
+
 #### a lightweight server for stubbing external systems and endpoints
 
 [![NPM](https://nodei.co/npm/stubby.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/stubby)
